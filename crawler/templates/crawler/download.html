@@ -1,0 +1,7 @@
+<h1>{{ item_url.name }}</h1>
+<p>Files downloaded</p>
+<ul>
+{% for file in selected_url %}
+    <li>{{ file }}</li>
+{% endfor %}
+</ul>

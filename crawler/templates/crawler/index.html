@@ -1,0 +1,9 @@
+{% if latest_url_list %}
+    <ul>
+    {% for item_url in latest_url_list %}
+        <li><a href="{% url 'crawler:detail' item_url.id %}">{{ item_url.name }}</a></li>
+	{% endfor %}
+    </ul>
+{% else %}
+    <p>No urls are available.</p>
+{% endif %}

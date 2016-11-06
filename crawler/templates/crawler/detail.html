@@ -1,0 +1,16 @@
+<h1>{{ item_url.name }}</h1>
+<li>{{ list_len }} files</li>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'crawler:download' item_url.id %}" method="post">
+{% csrf_token %}
+    <input type="submit" name="download" value="download files"/>
+</form>
+
+<ul>
+
+{% for file in files %}
+    <li>{{ file }}</li>
+{% endfor %}
+</ul>
+
+ 
